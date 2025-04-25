@@ -48,8 +48,8 @@ export async function deleteUser({ clerkUserId }: { clerkUserId: string }) {
     .where(eq(UserTable.clerkUserId, clerkUserId))
     .returning()
 
-  if (deletedUser == null) throw new Error('Failed to delete user')
-  revalidateUserCache(deletedUser.id)
+  // if (deletedUser == null) throw new Error('Failed to delete user')
+  // revalidateUserCache(deletedUser.id)
 
   return deletedUser
 }
