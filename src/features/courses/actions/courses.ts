@@ -28,6 +28,10 @@ export async function createCourse(unsafeData: z.infer<typeof courseSchema>) {
   redirect(`/admin/courses/${course.id}/edit`)
 }
 
+// function wait(number: number) {
+//   return new Promise(res => setTimeout(res, number))
+// }
+
 export async function updateCourse(
   id: string,
   unsafeData: z.infer<typeof courseSchema>
@@ -44,6 +48,8 @@ export async function updateCourse(
 }
 
 export async function deleteCourse(id: string) {
+  // await wait(2000)
+
   if (!canDeleteCourses(await getCurrentUser())) {
     return { error: true, message: 'Error deleting your course' }
   }

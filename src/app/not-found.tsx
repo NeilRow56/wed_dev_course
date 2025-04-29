@@ -1,6 +1,6 @@
-import { ArrowLeft } from 'lucide-react'
+import { BackButton } from '@/components/shared/back-button'
+
 import Image from 'next/image'
-import Link from 'next/link'
 
 export const metadata = {
   title: 'Page Not Found'
@@ -22,14 +22,8 @@ export default function NotFound() {
           title='Page Not Found'
         />
 
-        <div className='flex flex-col justify-center gap-4 sm:flex-row'>
-          <Link
-            href={'/'}
-            className='bg-primary hover:bg-primary/50 mt-6 flex items-center justify-center rounded-md px-4 py-2 text-white transition-colors hover:text-gray-100 dark:text-black'
-          >
-            <ArrowLeft className='mr-2 h-4 w-4' />
-            Back
-          </Link>
+        <div className='flex items-center justify-center'>
+          <BackButton />
         </div>
 
         <footer className='text-muted-foreground mt-12 text-center text-sm'>
